@@ -22,9 +22,9 @@ export const products: Product[] = [
         value: "#0A0A0A",
         slug: "noir",
         images: [
-          "/images/tshirt-noir-front.jpg",
-          "/images/tshirt-noir-back.jpg",
-          "/images/tshirt-noir-detail.jpg",
+          "/tshirt-noir-front.jpg",
+          "/tshirt-noir-back.jpg",
+          "/tshirt-noir-detail.jpg",
         ],
       },
       {
@@ -32,9 +32,9 @@ export const products: Product[] = [
         value: "#FAFAFA",
         slug: "blanc",
         images: [
-          "/images/tshirt-blanc-front.jpg",
-          "/images/tshirt-blanc-back.jpg",
-          "/images/tshirt-blanc-detail.jpg",
+          "/tshirt-blanc-front.jpg",
+          "/tshirt-blanc-back.jpg",
+          "/tshirt-blanc-detail.jpg",
         ],
       },
     ],

@@ -183,12 +183,12 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
             {[
-              { src: "/images/tshirt-noir-back.jpg", aspect: "aspect-[3/4]" },
-              { src: "/images/tshirt-blanc-front.jpg", aspect: "aspect-square" },
-              { src: "/images/tshirt-noir-detail.jpg", aspect: "aspect-[3/4]" },
-              { src: "/images/tshirt-blanc-back.jpg", aspect: "aspect-[3/4]" },
-              { src: "/images/tshirt-noir-front.jpg", aspect: "aspect-square" },
-              { src: "/images/tshirt-blanc-detail.jpg", aspect: "aspect-[3/4]" },
+              { src: "/tshirt-noir-back.jpg", aspect: "aspect-[3/4]" },
+              { src: "/tshirt-blanc-front.jpg", aspect: "aspect-square" },
+              { src: "/tshirt-noir-detail.jpg", aspect: "aspect-[3/4]" },
+              { src: "/tshirt-blanc-back.jpg", aspect: "aspect-[3/4]" },
+              { src: "/tshirt-noir-front.jpg", aspect: "aspect-square" },
+              { src: "/tshirt-blanc-detail.jpg", aspect: "aspect-[3/4]" },
             ].map((img, i) => (
               <AnimatedSection
                 key={i}
