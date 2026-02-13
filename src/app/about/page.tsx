@@ -1,6 +1,7 @@
 "use client";
 
 import AnimatedSection from "@/components/AnimatedSection";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function AboutPage() {
@@ -29,65 +30,134 @@ export default function AboutPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 sm:mb-28">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <AnimatedSection>
-            <div className="aspect-[4/5] bg-surface flex items-center justify-center">
-              <div className="text-center">
-                <span className="text-5xl font-bold tracking-[0.15em] uppercase text-border">
-                  S
-                </span>
-                <span className="block text-xs tracking-[0.3em] uppercase text-border mt-2">
-                  Atelier
-                </span>
-              </div>
+            <div className="aspect-[4/5] relative overflow-hidden">
+              <Image
+                src="/tshirt-noir-front.jpg"
+                alt="Tee-shirt Santina Paris noir — vue de face"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
           </AnimatedSection>
           <AnimatedSection delay={0.15}>
-            <div className="aspect-[4/5] bg-brand flex items-center justify-center">
-              <div className="text-center">
-                <span className="text-5xl font-bold tracking-[0.15em] uppercase text-white/20">
-                  S
-                </span>
-                <span className="block text-xs tracking-[0.3em] uppercase text-white/20 mt-2">
-                  Paris
-                </span>
-              </div>
+            <div className="aspect-[4/5] relative overflow-hidden">
+              <Image
+                src="/tshirt-blanc-front.jpg"
+                alt="Tee-shirt Santina Paris blanc — vue de face"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 sm:mb-28">
-        <div className="space-y-16 sm:space-y-20">
-          {[
-            {
-              title: "La matière avant tout",
-              text: "Nous sélectionnons un coton peigné 240g pour chaque tee-shirt. Cette densité offre un tombé parfait, une résistance exceptionnelle et un confort incomparable. Pas de compromis sur la base — la matière est le fondement de tout.",
-            },
-            {
-              title: "Confectionné au Portugal",
-              text: "Notre atelier partenaire au Portugal allie tradition et modernité. Chaque pièce est assemblée avec un savoir-faire qui se transmet depuis des générations. Les finitions sont irréprochables : coutures renforcées, col qui ne se déforme pas, coupe qui vieillit bien.",
-            },
-            {
-              title: "Dessiné à Paris",
-              text: "Le design de Santina naît à Paris, influencé par l'énergie urbaine de la ville. Notre approche est résolument minimaliste : pas de logos surdimensionnés, pas de tendances éphémères. Des coupes intemporelles pensées pour votre quotidien.",
-            },
-            {
-              title: "L'essentiel, pas le superflu",
-              text: "Nous ne cherchons pas à sortir 12 collections par an. Nous préférons perfectionner chaque pièce jusqu'à ce qu'elle atteigne notre standard. La collection Essential est le fruit de cette philosophie : un tee-shirt, deux couleurs, zéro compromis.",
-            },
-          ].map((section, i) => (
-            <AnimatedSection key={section.title} delay={i * 0.1}>
-              <div>
-                <h2 className="text-lg sm:text-xl font-medium tracking-wide mb-4">
-                  {section.title}
-                </h2>
-                <p className="text-sm sm:text-base text-muted leading-relaxed">
-                  {section.text}
-                </p>
-              </div>
-            </AnimatedSection>
-          ))}
+      {/* Value 1 — Matière */}
+      <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 sm:mb-20">
+        <AnimatedSection>
+          <h2 className="text-lg sm:text-xl font-medium tracking-wide mb-4">
+            La matière avant tout
+          </h2>
+          <p className="text-sm sm:text-base text-muted leading-relaxed">
+            Nous sélectionnons un coton peigné 240g pour chaque tee-shirt. Cette densité offre un tombé parfait, une résistance exceptionnelle et un confort incomparable. Pas de compromis sur la base — la matière est le fondement de tout.
+          </p>
+        </AnimatedSection>
+      </section>
+
+      {/* Detail photo */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 sm:mb-20">
+        <AnimatedSection>
+          <div className="aspect-[16/7] relative overflow-hidden">
+            <Image
+              src="/tshirt-noir-detail.jpg"
+              alt="Détail du tissu coton peigné 240g"
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+          </div>
+        </AnimatedSection>
+      </section>
+
+      {/* Value 2 — Portugal */}
+      <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 sm:mb-20">
+        <AnimatedSection>
+          <h2 className="text-lg sm:text-xl font-medium tracking-wide mb-4">
+            Confectionné au Portugal
+          </h2>
+          <p className="text-sm sm:text-base text-muted leading-relaxed">
+            Notre atelier partenaire au Portugal allie tradition et modernité. Chaque pièce est assemblée avec un savoir-faire qui se transmet depuis des générations. Les finitions sont irréprochables : coutures renforcées, col qui ne se déforme pas, coupe qui vieillit bien.
+          </p>
+        </AnimatedSection>
+      </section>
+
+      {/* Back views */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 sm:mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <AnimatedSection>
+            <div className="aspect-[4/5] relative overflow-hidden">
+              <Image
+                src="/tshirt-noir-back.jpg"
+                alt="Tee-shirt Santina Paris noir — vue de dos"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+          </AnimatedSection>
+          <AnimatedSection delay={0.15}>
+            <div className="aspect-[4/5] relative overflow-hidden">
+              <Image
+                src="/tshirt-blanc-back.jpg"
+                alt="Tee-shirt Santina Paris blanc — vue de dos"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+          </AnimatedSection>
         </div>
+      </section>
+
+      {/* Value 3 — Paris */}
+      <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 sm:mb-20">
+        <AnimatedSection>
+          <h2 className="text-lg sm:text-xl font-medium tracking-wide mb-4">
+            Dessiné à Paris
+          </h2>
+          <p className="text-sm sm:text-base text-muted leading-relaxed">
+            Le design de Santina naît à Paris, influencé par l&apos;énergie urbaine de la ville. Notre approche est résolument minimaliste : pas de logos surdimensionnés, pas de tendances éphémères. Des coupes intemporelles pensées pour votre quotidien.
+          </p>
+        </AnimatedSection>
+      </section>
+
+      {/* Detail photo blanc */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 sm:mb-20">
+        <AnimatedSection>
+          <div className="aspect-[16/7] relative overflow-hidden">
+            <Image
+              src="/tshirt-blanc-detail.jpg"
+              alt="Détail des finitions du tee-shirt blanc"
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+          </div>
+        </AnimatedSection>
+      </section>
+
+      {/* Value 4 — Essentiel */}
+      <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 sm:mb-28">
+        <AnimatedSection>
+          <h2 className="text-lg sm:text-xl font-medium tracking-wide mb-4">
+            L&apos;essentiel, pas le superflu
+          </h2>
+          <p className="text-sm sm:text-base text-muted leading-relaxed">
+            Nous ne cherchons pas à sortir 12 collections par an. Nous préférons perfectionner chaque pièce jusqu&apos;à ce qu&apos;elle atteigne notre standard. La collection Essential est le fruit de cette philosophie : un tee-shirt, deux couleurs, zéro compromis.
+          </p>
+        </AnimatedSection>
       </section>
 
       {/* CTA */}
