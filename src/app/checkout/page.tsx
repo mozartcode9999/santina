@@ -1,7 +1,8 @@
 "use client";
 
 import { useCart } from "@/context/CartContext";
-import { formatPrice } from "@/lib/products";
+import { formatPrice, getCartItemImage } from "@/lib/products";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -176,10 +177,14 @@ export default function CheckoutPage() {
                     key={`${item.productId}-${item.color}-${item.size}`}
                     className="flex gap-4"
                   >
-                    <div className="w-16 h-20 bg-white flex-shrink-0 flex items-center justify-center">
-                      <span className="text-[10px] text-muted uppercase tracking-wider">
-                        {item.color}
-                      </span>
+                    <div className="w-16 h-20 bg-white flex-shrink-0 relative overflow-hidden">
+                      <Image
+                        src={getCartItemImage(item.product, item.color)}
+                        alt={`${item.product.name} — ${item.color}`}
+                        fill
+                        className="object-cover"
+                        sizes="64px"
+                      />
                     </div>
                     <div className="flex-1">
                       <p className="text-sm font-medium">{item.product.name}</p>

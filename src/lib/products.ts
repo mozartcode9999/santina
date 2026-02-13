@@ -7,12 +7,13 @@ export const products: Product[] = [
     slug: "tee-shirt-essential",
     price: 79,
     description:
-      "Le tee-shirt Essential incarne l'essence de Santina Paris. Coupe contemporaine, coton premium 240g, confectionné au Portugal. Un basique élevé au rang d'essentiel.",
+      "Le tee-shirt Essential incarne l'essence de Santina Paris. Graphique Art Nouveau imprimé au dos, coupe contemporaine, coton premium 240g, confectionné au Portugal. Un basique élevé au rang d'essentiel.",
     details: [
       "100% coton peigné 240g",
       "Coupe regular contemporaine",
       "Confectionné au Portugal",
-      "Logo Santina Paris brodé",
+      "Graphique Art Nouveau imprimé au dos",
+      "Petit logo Santina sur la poitrine",
       "Lavage 30°C recommandé",
     ],
     colors: [
@@ -33,7 +34,6 @@ export const products: Product[] = [
         images: [
           "/images/tshirt-blanc-front.jpg",
           "/images/tshirt-blanc-back.jpg",
-          "/images/tshirt-blanc-detail.jpg",
         ],
       },
     ],
@@ -49,4 +49,9 @@ export function getProductBySlug(slug: string): Product | undefined {
 
 export function formatPrice(price: number): string {
   return `${price}\u00A0€`;
+}
+
+export function getCartItemImage(product: Product, colorName: string): string {
+  const color = product.colors.find((c) => c.name === colorName);
+  return color?.images[0] ?? product.colors[0].images[0];
 }

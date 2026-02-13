@@ -38,10 +38,11 @@ export default function ShopPage() {
         {/* Products grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
           {products.map((product) =>
-            product.colors.map((color) => (
+            product.colors.map((color, colorIndex) => (
               <ProductCard
                 key={`${product.id}-${color.slug}`}
                 product={product}
+                colorIndex={colorIndex}
               />
             ))
           )}

@@ -1,7 +1,8 @@
 "use client";
 
 import { useCart } from "@/context/CartContext";
-import { formatPrice } from "@/lib/products";
+import { formatPrice, getCartItemImage } from "@/lib/products";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 
@@ -96,11 +97,14 @@ export default function CartDrawer() {
                   key={`${item.productId}-${item.color}-${item.size}`}
                   className="flex gap-4"
                 >
-                  {/* Product image placeholder */}
-                  <div className="w-20 h-24 bg-surface flex-shrink-0 flex items-center justify-center">
-                    <span className="text-[10px] text-muted uppercase tracking-wider">
-                      {item.color}
-                    </span>
+                  <div className="w-20 h-24 bg-surface flex-shrink-0 relative overflow-hidden">
+                    <Image
+                      src={getCartItemImage(item.product, item.color)}
+                      alt={`${item.product.name} — ${item.color}`}
+                      fill
+                      className="object-cover"
+                      sizes="80px"
+                    />
                   </div>
 
                   <div className="flex-1 flex flex-col justify-between">

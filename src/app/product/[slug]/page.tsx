@@ -6,6 +6,7 @@ import { getProductBySlug, formatPrice } from "@/lib/products";
 import { useCart } from "@/context/CartContext";
 import AnimatedSection from "@/components/AnimatedSection";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function ProductPage() {
@@ -33,6 +34,7 @@ export default function ProductPage() {
   }
 
   const currentColor = product.colors[selectedColor];
+  const imageLabels = ["Face", "Dos", "Détail"];
 
   const handleAddToCart = () => {
     if (!selectedSize) return;
@@ -62,18 +64,18 @@ export default function ProductPage() {
           <AnimatedSection>
             <div>
               {/* Main image */}
-              <div className="aspect-[3/4] bg-surface mb-3 flex items-center justify-center relative overflow-hidden group">
-                <div className="text-center">
-                  <span className="text-6xl font-bold tracking-[0.15em] uppercase text-border group-hover:text-muted transition-colors duration-700">
-                    S
-                  </span>
-                  <span className="block text-sm tracking-[0.4em] uppercase text-border group-hover:text-muted transition-colors duration-700 mt-1">
-                    {currentColor.name}
-                  </span>
-                </div>
+              <div className="aspect-[3/4] bg-surface mb-3 relative overflow-hidden group">
+                <Image
+                  src={currentColor.images[selectedImage] ?? currentColor.images[0]}
+                  alt={`${product.name} — ${currentColor.name} — ${imageLabels[selectedImage] ?? ""}`}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
 
                 {product.badge && (
-                  <div className="absolute top-4 left-4 bg-brand text-white text-[10px] tracking-[0.15em] uppercase px-3 py-1.5 font-medium">
+                  <div className="absolute top-4 left-4 bg-brand text-white text-[10px] tracking-[0.15em] uppercase px-3 py-1.5 font-medium z-10">
                     {product.badge}
                   </div>
                 )}
@@ -81,17 +83,23 @@ export default function ProductPage() {
 
               {/* Thumbnails */}
               <div className="grid grid-cols-3 gap-3">
-                {currentColor.images.map((_, i) => (
+                {currentColor.images.map((img, i) => (
                   <button
                     key={i}
                     onClick={() => setSelectedImage(i)}
-                    className={`aspect-square bg-surface flex items-center justify-center text-xs text-muted transition-all duration-200 ${
+                    className={`aspect-square bg-surface relative overflow-hidden transition-all duration-200 ${
                       selectedImage === i
                         ? "ring-2 ring-brand"
                         : "hover:ring-1 ring-border"
                     }`}
                   >
-                    {i === 0 ? "Face" : i === 1 ? "Dos" : "Détail"}
+                    <Image
+                      src={img}
+                      alt={`${product.name} — ${imageLabels[i] ?? `Vue ${i + 1}`}`}
+                      fill
+                      className="object-cover"
+                      sizes="150px"
+                    />
                   </button>
                 ))}
               </div>

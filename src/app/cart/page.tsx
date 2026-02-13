@@ -1,7 +1,8 @@
 "use client";
 
 import { useCart } from "@/context/CartContext";
-import { formatPrice } from "@/lib/products";
+import { formatPrice, getCartItemImage } from "@/lib/products";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function CartPage() {
@@ -42,10 +43,14 @@ export default function CartPage() {
               key={`${item.productId}-${item.color}-${item.size}`}
               className="flex gap-4 sm:gap-6 pb-6 border-b border-border"
             >
-              <div className="w-24 h-32 sm:w-32 sm:h-40 bg-surface flex-shrink-0 flex items-center justify-center">
-                <span className="text-xs text-muted uppercase tracking-wider">
-                  {item.color}
-                </span>
+              <div className="w-24 h-32 sm:w-32 sm:h-40 bg-surface flex-shrink-0 relative overflow-hidden">
+                <Image
+                  src={getCartItemImage(item.product, item.color)}
+                  alt={`${item.product.name} — ${item.color}`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 96px, 128px"
+                />
               </div>
 
               <div className="flex-1 flex flex-col justify-between">

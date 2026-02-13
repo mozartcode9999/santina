@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { products } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -96,8 +97,8 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {products.map((product) =>
-              product.colors.map((color) => (
-                <ProductCard key={`${product.id}-${color.slug}`} product={product} />
+              product.colors.map((color, colorIndex) => (
+                <ProductCard key={`${product.id}-${color.slug}`} product={product} colorIndex={colorIndex} />
               ))
             )}
           </div>
@@ -181,26 +182,28 @@ export default function Home() {
           </AnimatedSection>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
+            {[
+              { src: "/images/tshirt-noir-back.jpg", aspect: "aspect-[3/4]" },
+              { src: "/images/tshirt-blanc-front.jpg", aspect: "aspect-square" },
+              { src: "/images/tshirt-noir-detail.jpg", aspect: "aspect-[3/4]" },
+              { src: "/images/tshirt-blanc-back.jpg", aspect: "aspect-[3/4]" },
+              { src: "/images/tshirt-noir-front.jpg", aspect: "aspect-square" },
+            ].map((img, i) => (
               <AnimatedSection
                 key={i}
                 delay={i * 0.08}
-                className={i <= 2 ? "md:col-span-1" : ""}
               >
                 <div
-                  className={`bg-surface overflow-hidden ${
-                    i === 1 ? "aspect-[3/4]" : i === 2 ? "aspect-square" : "aspect-[3/4]"
-                  } flex items-center justify-center group cursor-pointer relative`}
+                  className={`bg-surface overflow-hidden ${img.aspect} group cursor-pointer relative`}
                 >
-                  <div className="text-center">
-                    <span className="text-3xl font-bold tracking-[0.15em] uppercase text-border group-hover:text-muted transition-colors duration-700">
-                      S
-                    </span>
-                    <span className="block text-[8px] tracking-[0.4em] uppercase text-border group-hover:text-muted transition-colors duration-700">
-                      Lookbook {i}
-                    </span>
-                  </div>
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
+                  <Image
+                    src={img.src}
+                    alt={`Lookbook Santina Paris ${i + 1}`}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
                 </div>
               </AnimatedSection>
             ))}
