@@ -188,6 +188,7 @@ export default function Home() {
               { src: "/images/tshirt-noir-detail.jpg", aspect: "aspect-[3/4]" },
               { src: "/images/tshirt-blanc-back.jpg", aspect: "aspect-[3/4]" },
               { src: "/images/tshirt-noir-front.jpg", aspect: "aspect-square" },
+              { src: "/images/tshirt-blanc-detail.jpg", aspect: "aspect-[3/4]" },
             ].map((img, i) => (
               <AnimatedSection
                 key={i}

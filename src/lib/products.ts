@@ -34,6 +34,7 @@ export const products: Product[] = [
         images: [
           "/images/tshirt-blanc-front.jpg",
           "/images/tshirt-blanc-back.jpg",
+          "/images/tshirt-blanc-detail.jpg",
         ],
       },
     ],
