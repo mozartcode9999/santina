@@ -12,28 +12,30 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-surface overflow-hidden">
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-[0.02]">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-                "repeating-linear-gradient(0deg, #000 0px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, #000 0px, transparent 1px, transparent 40px)",
-            }}
+      <section className="relative min-h-screen flex items-end overflow-hidden">
+        {/* Hero background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/tshirt-noir-front.jpg"
+            alt="Santina Paris — Collection Essential"
+            fill
+            className="object-cover object-center"
+            priority
+            sizes="100vw"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
         </div>
 
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-32">
+        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pb-16 sm:pb-24 pt-32">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-[0.08em] uppercase mb-2">
+            <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-[0.08em] uppercase mb-2 text-white">
               Santina
             </h1>
-            <p className="text-xs sm:text-sm tracking-[0.5em] uppercase text-muted mb-8">
+            <p className="text-xs sm:text-sm tracking-[0.5em] uppercase text-white/60 mb-8">
               Paris
             </p>
           </motion.div>
@@ -42,7 +44,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-            className="text-lg sm:text-xl font-light text-muted max-w-lg mx-auto mb-12 leading-relaxed"
+            className="text-lg sm:text-xl font-light text-white/80 max-w-lg mb-12 leading-relaxed"
           >
             Streetwear premium. L&apos;essentiel, élevé au rang d&apos;exception.
           </motion.p>
@@ -51,17 +53,17 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-4"
           >
             <Link
               href="/shop"
-              className="inline-block bg-brand text-white px-10 py-4 text-xs tracking-[0.25em] uppercase font-medium hover:bg-brand-light transition-colors duration-200"
+              className="inline-block bg-white text-brand px-10 py-4 text-xs tracking-[0.25em] uppercase font-medium hover:bg-white/90 transition-colors duration-200"
             >
               Découvrir la collection
             </Link>
             <Link
               href="/about"
-              className="inline-block border border-brand text-brand px-10 py-4 text-xs tracking-[0.25em] uppercase font-medium hover:bg-brand hover:text-white transition-all duration-200"
+              className="inline-block border border-white text-white px-10 py-4 text-xs tracking-[0.25em] uppercase font-medium hover:bg-white hover:text-brand transition-all duration-200"
             >
               Notre histoire
             </Link>
@@ -78,7 +80,7 @@ export default function Home() {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="w-[1px] h-12 bg-gradient-to-b from-transparent via-muted to-transparent"
+            className="w-[1px] h-12 bg-gradient-to-b from-transparent via-white/60 to-transparent"
           />
         </motion.div>
       </section>

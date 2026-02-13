@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 import Navigation from "@/components/Navigation";
-import AnnouncementBar from "@/components/AnnouncementBar";
+
 import CartDrawer from "@/components/CartDrawer";
 import Footer from "@/components/Footer";
 
@@ -71,7 +71,6 @@ export default function RootLayout({
     <html lang="fr">
       <body className={`${inter.variable} antialiased`}>
         <CartProvider>
-          <AnnouncementBar />
           <Navigation />
           <CartDrawer />
           <main>{children}</main>
