@@ -26,28 +26,39 @@ export default function AboutPage() {
         </AnimatedSection>
       </section>
 
-      {/* Image grid */}
+      {/* Lifestyle image grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 sm:mb-28">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <AnimatedSection>
-            <div className="aspect-[4/5] relative overflow-hidden">
+            <div className="aspect-[3/4] relative overflow-hidden">
               <Image
-                src="/tshirt-noir-front.jpg"
-                alt="Tee-shirt Santina Paris noir — vue de face"
+                src="/lifestyle-1.png"
+                alt="Santina Paris — T-shirt noir porté dans les rues de Paris"
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
             </div>
           </AnimatedSection>
-          <AnimatedSection delay={0.15}>
-            <div className="aspect-[4/5] relative overflow-hidden">
+          <AnimatedSection delay={0.1}>
+            <div className="aspect-[3/4] relative overflow-hidden">
               <Image
-                src="/tshirt-blanc-front.jpg"
-                alt="Tee-shirt Santina Paris blanc — vue de face"
+                src="/lifestyle-2.png"
+                alt="Santina Paris — T-shirt blanc porté dans les rues de Paris"
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+          </AnimatedSection>
+          <AnimatedSection delay={0.2}>
+            <div className="aspect-[3/4] relative overflow-hidden">
+              <Image
+                src="/lifestyle-3.png"
+                alt="Santina Paris — T-shirt blanc porté en ville"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
             </div>
           </AnimatedSection>

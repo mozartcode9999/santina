@@ -16,14 +16,14 @@ export default function Home() {
         {/* Hero background image */}
         <div className="absolute inset-0">
           <Image
-            src="/tshirt-noir-front.jpg"
-            alt="Santina Paris — Collection Essential"
+            src="/lifestyle-1.png"
+            alt="Santina Paris — Collection Essential portée en rue à Paris"
             fill
-            className="object-cover object-center"
+            className="object-cover object-top"
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
         </div>
 
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pb-16 sm:pb-24 pt-32">
@@ -185,12 +185,12 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
             {[
-              { src: "/tshirt-noir-back.jpg", aspect: "aspect-[3/4]" },
+              { src: "/lifestyle-1.png", aspect: "aspect-[3/4]" },
               { src: "/tshirt-blanc-front.jpg", aspect: "aspect-square" },
-              { src: "/tshirt-noir-detail.jpg", aspect: "aspect-[3/4]" },
+              { src: "/lifestyle-2.png", aspect: "aspect-[3/4]" },
+              { src: "/lifestyle-3.png", aspect: "aspect-[3/4]" },
+              { src: "/tshirt-noir-back.jpg", aspect: "aspect-square" },
               { src: "/tshirt-blanc-back.jpg", aspect: "aspect-[3/4]" },
-              { src: "/tshirt-noir-front.jpg", aspect: "aspect-square" },
-              { src: "/tshirt-blanc-detail.jpg", aspect: "aspect-[3/4]" },
             ].map((img, i) => (
               <AnimatedSection
                 key={i}
