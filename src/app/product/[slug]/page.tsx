@@ -21,7 +21,7 @@ export default function ProductPage() {
 
   if (!product) {
     return (
-      <div className="pt-40 pb-20 text-center">
+      <div className="pt-20 sm:pt-24 pb-20 text-center">
         <p className="text-muted">Produit introuvable</p>
         <Link
           href="/shop"
@@ -44,7 +44,7 @@ export default function ProductPage() {
   };
 
   return (
-    <div className="pt-28 sm:pt-36 pb-20">
+    <div className="pt-20 sm:pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
         <nav className="mb-8 text-xs text-muted">

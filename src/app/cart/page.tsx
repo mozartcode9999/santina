@@ -10,7 +10,7 @@ export default function CartPage() {
 
   if (items.length === 0) {
     return (
-      <div className="pt-40 pb-20 text-center">
+      <div className="pt-20 sm:pt-24 pb-20 text-center">
         <h1 className="text-2xl font-light tracking-wide mb-4">
           Votre panier est vide
         </h1>
@@ -30,7 +30,7 @@ export default function CartPage() {
   const shipping = total >= 100 ? 0 : 5.9;
 
   return (
-    <div className="pt-32 sm:pt-40 pb-20">
+    <div className="pt-20 sm:pt-24 pb-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-xs tracking-[0.3em] uppercase text-muted mb-10 text-center">
           Panier ({items.length})

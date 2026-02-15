@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <div className="pt-24 sm:pt-28 pb-20">
+    <div className="pt-20 sm:pt-24 pb-20">
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 sm:mb-28">
         <AnimatedSection className="text-center max-w-2xl mx-auto">

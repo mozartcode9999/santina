@@ -6,7 +6,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 
 export default function ShopPage() {
   return (
-    <div className="pt-32 sm:pt-40 pb-20">
+    <div className="pt-20 sm:pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <AnimatedSection className="text-center mb-16">

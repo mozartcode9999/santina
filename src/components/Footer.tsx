@@ -73,15 +73,15 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:contact@santinaparis.com"
+                  href="mailto:santina.wear@gmail.com"
                   className="text-sm text-white/60 hover:text-white transition-colors duration-200"
                 >
-                  contact@santinaparis.com
+                  santina.wear@gmail.com
                 </a>
               </li>
               <li>
                 <a
-                  href="https://instagram.com/santinaparis"
+                  href="https://instagram.com/santina.wear"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-white/60 hover:text-white transition-colors duration-200"

@@ -22,7 +22,7 @@ export default function CheckoutPage() {
 
   if (step === "success") {
     return (
-      <div className="pt-40 pb-20 text-center max-w-lg mx-auto px-4">
+      <div className="pt-20 sm:pt-24 pb-20 text-center max-w-lg mx-auto px-4">
         <div className="mb-6">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ export default function CheckoutPage() {
 
   if (items.length === 0) {
     return (
-      <div className="pt-40 pb-20 text-center">
+      <div className="pt-20 sm:pt-24 pb-20 text-center">
         <p className="text-muted mb-4">Votre panier est vide</p>
         <Link
           href="/shop"
@@ -71,7 +71,7 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="pt-32 sm:pt-40 pb-20">
+    <div className="pt-20 sm:pt-24 pb-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-xs tracking-[0.3em] uppercase text-muted mb-10 text-center">
           Checkout
