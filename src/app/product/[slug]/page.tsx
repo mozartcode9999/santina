@@ -61,7 +61,7 @@ export default function ProductPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Image gallery */}
-          <AnimatedSection>
+          <div>
             <div>
               {/* Main image */}
               <div className="aspect-[3/4] bg-surface mb-3 relative overflow-hidden group">
@@ -104,12 +104,11 @@ export default function ProductPage() {
                 ))}
               </div>
             </div>
-          </AnimatedSection>
+          </div>
 
           {/* Product info */}
           <div className="lg:pt-4">
-            <AnimatedSection delay={0.1}>
-              <div className="space-y-6">
+            <div className="space-y-6">
                 <div>
                   <p className="text-xs tracking-[0.2em] uppercase text-muted mb-2">
                     {product.category}
@@ -268,7 +267,6 @@ export default function ProductPage() {
                   </ul>
                 </details>
               </div>
-            </AnimatedSection>
           </div>
         </div>
       </div>

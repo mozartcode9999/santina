@@ -9,7 +9,7 @@ export default function AboutPage() {
     <div className="pt-20 sm:pt-24 pb-20">
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 sm:mb-28">
-        <AnimatedSection className="text-center max-w-2xl mx-auto">
+        <div className="text-center max-w-2xl mx-auto">
           <h1 className="text-xs tracking-[0.3em] uppercase text-muted mb-6">
             Notre histoire
           </h1>
@@ -23,7 +23,7 @@ export default function AboutPage() {
             mérite la même exigence de qualité que le luxe. Chaque pièce est
             pensée pour être portée, aimée, et gardée.
           </p>
-        </AnimatedSection>
+        </div>
       </section>
 
       {/* Lifestyle image grid */}

@@ -9,7 +9,7 @@ export default function ShopPage() {
     <div className="pt-20 sm:pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <AnimatedSection className="text-center mb-16">
+        <div className="text-center mb-16">
           <h1 className="text-xs tracking-[0.3em] uppercase text-muted mb-4">
             Boutique
           </h1>
@@ -21,7 +21,7 @@ export default function ShopPage() {
             confectionnée avec les meilleurs matériaux et un soin
             méticuleux.
           </p>
-        </AnimatedSection>
+        </div>
 
         {/* Filter bar */}
         <div className="flex items-center justify-between mb-12 pb-4 border-b border-border">
